@@ -116,8 +116,8 @@ send me a DM to check your pull request
  example:  
 
 //1) write out, in plain-english, 5 traits and 3 things it can do.
-Car Wash   
-5 properties:
+Car Wash 
+5 properties:  (What does it have?)
     1) vacuum cleaners
     2) eco-friendly cleaning supplies
     3) stores the amount of water used per week.
@@ -173,59 +173,59 @@ struct CarWash //2)
 
 
 /*
-1)
+1)Song
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Name of Song
+    2) Artist Name
+    3) Genre
+    4) Description of Song
+    5) Song Length
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Provide access to the song
+    2) Delete Song Data
+    3) Replace Song Data
  */
 
 /*
-2)
+2) FX Filters
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Lo-Fi Filter
+    2) "AutoTune" Effect
+    3) DeNoise Filter
+    4) Dry/Wet Control
+    5) Bypass Filter Control
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Remove high/low frequencies and add distortion to audio
+    2) Apply Pitch Correction Algo to Vocal File
+    3) Apply multi-band expander to vocal vocal track
  */
 
 /*
-3)
+3) Record Audio Activity Screen (for Android App)
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Song Playback Button
+    2) Song Stop Button
+    3) Record Button
+    4) Undo Record Button
+    5) Back Button
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Record Audio To Disk
+    2) Play Recorded Audio
+    3) Seek Song by Touch
  */
 
 /*
-4)
+4) Success/Song Rendering Activity (for Android App)
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Save Song to Phone Storage Button
+    2) Send Song Via Email Button
+    3) Share Song to Social Button
+    4) Make Another Song Button
+    5) Advertisement
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Attach Song To Email
+    2) Connect to Facebook API
+    3) Display Ad from Google AdMob
  */
 
 /*
