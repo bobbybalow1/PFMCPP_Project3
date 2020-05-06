@@ -103,17 +103,17 @@ You are going to write 10 UDTs in project3.
  */
 
 /*
-Thing 10)
+Thing 10) Microphone
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Capsule
+    2) Pop Filter
+    3) Cord Connector (XLR)
+    4) Polarity pattern Switch
+    5) Microphone Body
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Transmit electromechanical signals
+    2) Convert vibration into electrical signal
+    3) Change power feeding capsule (change polarity pattern)
  */
 
 /*
