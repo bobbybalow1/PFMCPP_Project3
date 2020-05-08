@@ -103,17 +103,17 @@ You are going to write 10 UDTs in project3.
  */
 
 /*
-Thing 10) Microphone
+Thing 10) Laptop Computer
 5 properties:
-    1) Capsule
-    2) Pop Filter
-    3) Cord Connector (XLR)
-    4) Polarity pattern Switch
-    5) Microphone Body
+    1) Keyboard
+    2) Screen
+    3) Webcam
+    4) TouchPad
+    5) Speakers
 3 things it can do:
-    1) Transmit electromechanical signals
-    2) Convert vibration into electrical signal
-    3) Change power feeding capsule (change polarity pattern)
+    1) Run an application
+    2) Send an email
+    3) Play music
  */
 
 /*
