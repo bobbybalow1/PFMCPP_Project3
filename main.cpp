@@ -122,73 +122,73 @@ You are going to write 10 UDTs in project3.
  */
 
 /*
-Thing 5)
+Thing 5) Keyboard
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+        1) Color of Keyboard
+        2) Depth of Keystroke
+        3) Keyboard Language (British vs US)
+        4) Number of Keys
+        5) Type (mechanical, wireless, corded, etc)
 3 things it can do:
-    1)
-    2)
-    3)
+        1) Enter code
+        2) Interface with Computer
+        3) Illuminate
  */
 
 /*
-Thing 6)
+Thing 6) Screen
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+        1) Size
+        2) Resolution
+        3) Brightness
+        4) Cost
+        5) Number of Integrated Speakers
 3 things it can do:
-    1)
-    2)
-    3)
+        1) Increase/decrease brightness
+        2) Increase/decrease Contrast
+        3) Interface with computer
  */
 
 /*
-Thing 7)
+Thing 7) Webcam
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+        1) Resolution
+        2) Size (of actual webcam itself)
+        3) Type of Zoom (optical vs digital)
+        4) Type of noise reduction
+        5) Type of focus (manual vs auto)
 3 things it can do:
-    1)
-    2)
-    3)
+        1) Record Videos
+        2) Record Audio
+        3) Take pictures
  */
 
 /*
-Thing 8)
+Thing 8) TouchPad
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+        1) Number of fingers detected (multitouch)
+        2) Movement speed
+        3) Doubleclick speed
+        4) Number of buttons
+        5) Sensitivity
 3 things it can do:
-    1)
-    2)
-    3)
+        1) Move cursor
+        2) Select objects
+        3) Multigesture actions
  */
 
 /*
-Thing 9)
+Thing 9) Speakers
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+        1) Number of speakers
+        2) Cone Material
+        3) Power Consumption
+        4) Efficiency
+        5) Number of Drivers (tweeter, woofer, etc) 
 3 things it can do:
-    1)
-    2)
-    3)
+        1) Make sound
+        2) Move driver forwards and backwards
+        3) Consume electricity
  */
 
 /*
