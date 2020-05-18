@@ -113,8 +113,6 @@ struct CarWash //                                   1) define an empty struct fo
     Car carBeingServiced;  
 };
 
-
-
 /*
 1)Song
 5 properties:
@@ -128,6 +126,28 @@ struct CarWash //                                   1) define an empty struct fo
     2) Delete Song Data
     3) Replace Song Data
  */
+struct Song 
+{
+    //song name
+    bool hasSongName = true;
+    //artist name
+    std::string artistName = "The Artist";
+    //genre
+    std::string genre = "Rock";
+    //song description
+    bool hasSongDescription = false;
+    //song length
+    float songLength = 3.13f; //minutes
+
+    //provide access to song
+    void accessSongData ( Song mySong );
+    //delete song data
+    void deleteSongData ( Song mySong );
+    //replace song data
+    void replaceSongData ( Song mySong ); // or would it be better to have different parameters here like ( Song replacedSongData )?
+    
+    //a member variable whose type is a UDT.    
+};
 
 /*
 2) FX Filters
@@ -142,6 +162,27 @@ struct CarWash //                                   1) define an empty struct fo
     2) Apply Pitch Correction Algo to Vocal File
     3) Apply multi-band expander to vocal vocal track
  */
+struct Filters
+{
+    //lo-fi filter
+    bool lofiEnabled = true;
+    //autotune effect
+    bool autotuneEnabled = true;
+    //denoise filter
+    bool denoiseEnabled = false;
+    //dry wet control
+    int dryWetControl = 100; //percent
+    //fx bypass
+    bool bypassEnabled = false;
+
+    //Remove high/low freq and addd distortion
+    void bandPassDistortion ( int lowFreq = 300, int highFreq = 4000, int distLevel = 5 );
+    //apply pitch correction
+    void pitchCorrection ( int tuneSpeed = 4, char keyOfSong = 'a');
+    //apply multi-band expander
+    void expander ( int threshold = 30, float expandRatio = 3.0f );
+    // a member variable whose type is a UDT.
+};
 
 /*
 3) Record Audio Activity Screen (for Android App)
@@ -156,6 +197,26 @@ struct CarWash //                                   1) define an empty struct fo
     2) Play Recorded Audio
     3) Seek Song by Touch
  */
+struct AppButton
+{
+    //Playback Button
+    bool songPlaybackButton = true;
+    //Stop Playback Button
+    bool songStopped = false;
+    //Record Button
+    bool recordAudio = false;
+    //Undo Button
+    int undoRecordingHistory = 10;
+    //Back Button
+    int previousActivity = 8;
+
+    //Record Audio to Disk
+    void recordAudioSize ( float maxFileSize = 300.0 ); //MB
+    //Play Recorded Audio
+    void playAudio ( float playbackVolume = 9.5 ); // out of 10.
+    //Seek Song by Touch
+    void seekSong ( float getTouchPostion() ); //Going out on a limb here... is this ok? or would you set a member variable to the value of getTouchPosition()?
+};
 
 /*
 4) Success/Song Rendering Activity (for Android App)
@@ -171,6 +232,28 @@ struct CarWash //                                   1) define an empty struct fo
     3) Display Ad from Google AdMob
  */
 
+struct SuccessActivity
+{
+    //save song to phone storage button
+    bool songSaved = false;
+    //send song via email button
+    bool emailIsValid = true;
+    //share song to social button
+    int socialShare = 3;
+    //make another song button
+    bool makeNewSong = false;
+    //advertisement
+    bool showAd = true;
+
+    //attach song to email
+    void startEmailSong ( bool sendEmail = true );
+    // connect to facebook API
+    void connectFacebookAPI ( double userToken = 4098834720384 );
+    //display ad from google admob
+    void showAdDuration ( int lengthOfAd = 5 );
+   // a member variable whose type is a UDT.
+};
+
 /*
 Thing 5) Keyboard
 5 properties:
@@ -184,6 +267,26 @@ Thing 5) Keyboard
         2) Interface with Computer
         3) Illuminate
  */
+
+struct Keyboard
+{
+    //color of keyboard
+    std::string keyboardColor = "black";
+    //depth of keystroke
+    int keyStrokeDepth = 3; //mm
+    //keyboard language
+    bool keyboardUS = true;
+    //number of keys
+    int numberOfKeys = 120;
+    //type of keyboard (mechanical, etc.)
+    int keyboardType = 3;
+    //enter code
+    void codeToEnter ( int myCode );
+    //interface with comp
+    void connectedToComputer ( int numOfConnections = 3 );
+    //illuminate
+    void illuminateKeyboard ( int illuminationIntensity = 4 );
+};
 
 /*
 Thing 6) Screen
@@ -199,6 +302,26 @@ Thing 6) Screen
         3) Interface with computer
  */
 
+
+struct Screen
+{
+    //size
+    int screenSize = 14;
+    //resolution
+    int resolution = 1080;
+    //brightness
+    int brightness = 10;
+    //cost
+    float cost = 99.99f;
+    //num of integrated speakers
+    int numSpeakers = 2;
+    //increase brightness
+    int increaseBrightness (int myBrightness);
+    //set contrast
+    int setContrast (int myContrast = 4);
+    //interface with computer
+    bool isConnected (bool isPluggedIn = true);
+};
 /*
 Thing 7) Webcam
 5 properties:
@@ -213,6 +336,26 @@ Thing 7) Webcam
         3) Take pictures
  */
 
+
+struct Webcam
+ {
+     //resolution
+     int cameraResolution = 720;
+     // dimensions of webcam
+     float sizeOfWebcam = 2.25; //inches
+     //type of zoom
+     bool digitalZoom = false;
+     //type of noise reduction
+     int noiseReductionType = 2;
+     //type of focus
+     bool manualFocus = false;
+    //record video
+    void recordVideo ( float myVideoLength = 121); //seconds
+    //record audio
+    void recordAudio ( float myAudioLength = 121); //seconds
+    //take picture
+    void takeScreenShot ( int imageResolution = 10); //MP
+ };
 /*
 Thing 8) TouchPad
 5 properties:
@@ -227,6 +370,27 @@ Thing 8) TouchPad
         3) Multigesture actions
  */
 
+struct TouchPad
+{
+    //1) Number of fingers detected (multitouch)
+    int numOfFingers = 0;
+    // 2) Movement speed
+    int movementSpeed = 5;
+    //3) Doubleclick speed
+    int doubleclickSpeed = 3;
+    //4) Number of buttons
+    int numOfButtons = 2;
+    //5) Sensitivity
+    float sensitivity = 3.334f;
+
+    //Move cursor
+    void moveMouseCursor ( int xPosition = 1444, int yPosition = 100  ); //in px
+    // Select objects
+    void selectObjects ( unsigned int objectsToSelect = 2);
+    // Multigesture actions
+    void performMultigesture ( bool multipleFingersDetected = false );
+};
+
 /*
 Thing 9) Speakers
 5 properties:
@@ -240,7 +404,26 @@ Thing 9) Speakers
         2) Move driver forwards and backwards
         3) Consume electricity
  */
+struct Speakers
+{
+    // Number of speakers
+    int numOfSPeakers = 2;
+    // Cone Material
+    char coneMaterial = 'a';
+    // Power Consumption
+    float powerConsumed = 10.33f; //watts
+    // Efficiency
+    float efficiency = 99.3f; //percent
+    // Number of Drivers (tweeter, woofer, etc) 
+    int numOfDrivers = 3;
 
+    // Make sound
+    void makeSound ( int sendPower = 10 ); //watts
+    // Move driver forwards and backwards
+    void oscillateWoofer ( float excursion = 0.9f );
+    // Consume electricity
+    void consumeElectricity ( float rateOfConsumption = 15.f ); //watts
+};
 /*
 Thing 10) Laptop Computer
 5 properties:
@@ -254,6 +437,50 @@ Thing 10) Laptop Computer
     2) Send an email
     3) Play music
  */
+struct Laptop
+{
+    //Keyboard
+    unsigned int keyboard = 1;
+    //Screen
+    unsigned int screen = 1080;
+    //Webcam
+    bool hasWebcam = false;
+    //TouchPad
+    float touchpadSensitivity = 3.33f;
+    //Speakers
+    unsigned int numOfSpeakersLaptop = 2;
+
+    struct LaptopSpeaker
+    {
+        //Manufacturer Model
+        std::string modelOfSpeaker = "Bose3";
+        //Warranty?
+        bool hasWarranty = false;
+        //Year Made
+        int yearMade = 2020;
+        //Color of woofer
+        std::string color = "blue";
+        //Default volume
+        float defaultVolume = 0.55f;
+
+        // Ok to play sounds?
+        void playSounds ( bool muteEnabled = false);
+        // Increase the volume by
+        void increaseVolume ( float amountToIncrease = 0.5f); // out of 10
+        // Sleep timer time remaining
+        void sleepTimer ( unsigned int timeUntilMute = 600); //seconds
+    };
+    // Play fav song on speakers
+    void playFavoriteSong ( LaptopSpeaker playSound );
+    // Length of time remaining for song
+    int howLongToPlay ( LaptopSpeaker songDuration );
+    // stop powering speakers when computer turned off
+    void turnOffOnShutdown ( LaptopSpeaker powerDown );
+
+    // member variable with UDT
+    LaptopSpeaker speakersInLaptop;
+
+};
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
