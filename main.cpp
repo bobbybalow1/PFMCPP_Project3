@@ -1,315 +1,501 @@
 /*
-Project 3 - Part 1 / 5
+Project 3 - Part 1e / 5
 Video:  Chapter 2 Part 5
 User-Defined Types
 
 Create a branch named Part1
 
-Purpose: The entire purpose of this 5-part project is to get you writing C++ code that compiles and to reinforce the syntax habits that C++ requires.  What you create in this project will be used as the basis of Project 5 in the course.   
-
-1) write 10 user-defined types in plain english
-   - This step will involve several checkpoints before it is complete.
-
-Checkpoint 1:
-    Fill in #1 - 4 with a random UDT in plain english
-    These 4 UDTs do not need to be related.
-    For each plain-english UDT, write out 3 things it can do, and 5 traits or properties.
+Purpose: The entire purpose of this 5-part project is to get you writing C++ code that compiles and to 
+reinforce the syntax habits that C++ requires.  
+What you create in this project will be used as the basis of Project 5 in the course.   
 
 ************************
-    Commit after you complete this step so i can review before you proceed
-    Ping me in Slack to review this step.
-    Wait for me to review before proceeding to the next Checkpoint
+Part1 purpose:  Learn to write UDTs
+
+You are going to write 10 UDTs in project3.  
+    Part 1a: you will learn to think about an object in terms of its sub-objects.
+    Part 1b: you will write 4 un-related UDTs in plain english
+    Part 1c: you will write 1 UDT in plain english that will be made of 5 related sub-objects
+    Part 1d: you will write plain-english UDTs for the 5 sub-objects that form the UDT defined in Part 1c
+    Part 1e: you will convert those 10 plain-english UDTs into code that runs.
 ************************
 
-Checkpoint 2:
-    For the 10th UDT, come up with an object that is made of 5 smaller parts.
-    Here is an example:
-    Cell Phone
+Convert your 10 Plain-english UDTs into code.
 
-    A Cell Phone is made up of the following 5 properties:
-        Display
-        Memory
-        CPU
-        Radio
-        Applications
+I recommend compiling after finishing each one and making sure it compiles 
+without errors or warnings before moving on to writing the next UDT. 
 
-    A Cell Phone has 3 things it can do:
-        make a call
-        send a text
-        run an application.
+1) define an empty struct for each of your 10 types. i.e.:
+*/
+struct CellPhone
+{
 
-************************
-    Commit after you complete this step so i can review before you proceed
-    Ping me in Slack to review this step.
-    Wait for me to review before proceeding to the next Checkpoint
-************************
-
-Checkpoint 3: 
-
-    Fill in #5 - #9 with plain-english UDTs for the 5 properties you created for UDT #10
-
-    The goal of this step is to get you to think about breaking down an object into smaller and smaller objects, until the smallest object is made of up only C++ primitives. 
-
-    These 5 things can be broken down into their own sub-objects and properties. 
-
-    For example: Display
-    A Display has the following 5 traits or properties:
-        pixels
-        amount of power consumed.
-        brightness.
-        width
-        height
-
-    the Display's brightness can be represented with a Primitive, such as a double. 
-    The amount of power consumed can also be represented with a Primitive.
-    The 'pixels' must be represented with an array of Pixel instances.  Arrays have not been discussed and can't be used in this project.
-    Instead, we can use an Integer primitive to describe the Number of Pixels:
-
-    Display:
-        Number of Pixels
-        Amount of Power consumed
-        Brightness
-
-    Notice that I did not write "has a display" or "Has memory" or "has a cpu"  
-    Writing 'has a ___" checks whether or not your object *has the ability to do something*.
-    Instead, I wrote "Display" or "CPU".  These are specific objects or amounts. 
-    In C++ terms, this means to I want you to avoid bool (has a) as a member variable type.
-    Instead, prefer the other primitive types when you get to step 2)
-
-************************
-    Commit after you complete this step so i can review before you proceed
-    Ping me in Slack to review this step.
-    Wait for me to review before proceeding with step 2.
-************************
-  
- 2) define your struct for each of your 10 types. 
-    - Copy your 3 actions & 5 traits into your struct body.
+};
+/*
+2) Copy your 5 properties & 3 actions into the empty struct body.
     - comment them out.
-    - I recommend compiling after finishing each one and making sure it compiles without errors or warnings before moving on to writing the next UDT.
- 
- 3) declare your member variables and member functions underneath each plain-english comment in your struct's body.
+    
+3) declare your member variables and member functions underneath each plain-english comment in your struct's body.
     - give the member variables relevant data types
  
- 4) make the function parameter list for those member functions use some of your User-Defined Types
-    - You'll write definitions in part2 for these functions
-    - you'll call each of these functions in part3
+4) make the function parameter list for those member functions use some of your User-Defined Types
+    - You'll write definitions/implementations for these functions in Project3 Part2
+    - you'll call each of these functions in Project3 part3
  
- 5) make 2 of the 10 user-defined types have a nested class.  
-    - this nested class also needs at least 2 member functions.
+5) make 2 of the 10 user-defined types have a nested class.  
+    - this nested class also needs 5 properties and 3 actions.
     - these nested classes are not considered one of your 10 UDTs.
+    - this nested class must be related to the class it is nested inside
  
- 6) your 10th UDTs should only use 5 of your other UDTs for its member variable types.   
+6) your 10th UDT's properties should be instances of your #5-#9 UDTs.   
     - No primitives allowed!
  
- 7) After you finish defining each type, click the [run] button.  Clear up any errors or warnings as best you can.
- 
- Commit your changes by clicking on the Source Control panel on the left, entering a message, and click [Commit and push].
- 
- Make a pull request after you make your first commit and pin the pull request link to our DM thread.
-
-send me a DM to check your pull request
-
- Wait for my code review.
+7) After you finish defining each type, click the [run] button.  
+    Clear up any errors or warnings as best you can. 
  */
 
 /*
  example:  
 
-//1) write out, in plain-english, 5 traits and 3 things it can do.
-Car Wash   
-5 properties:
-    1) vacuum cleaners
-    2) eco-friendly cleaning supplies
-    3) stores the amount of water used per week.
-    4) stores amount of profit made per week
-    5) number of cars serviced per day
-
-3 things it can do:
-    1) wash and wax car
-    2) charge customer
-    3) detail the car interior
+Thing: Car Wash   
+    5 properties:
+        - number of vacuum cleaners
+        - number of eco-friendly cleaning supplies
+        - stores the amount of water used per week.
+        - stores amount of profit made per week
+        - number of cars serviced per day
+    3 things it can do:
+        - wash and wax car
+        - charge customer
+        - detail the car interior
  */
-struct CarWash //2)        
+
+#include <iostream>
+#include <string>
+
+struct CarWash //                                   1) define an empty struct for each of your 10 types.       
 {
-    //2) has vacuum cleaners
-    int numVacuumCleaners = 3; //3) member variables with relevant data types.
-    //2) has eco-friendly cleaning supplies
-    int numEcoFriendlyCleaningSupplies = 20; //3) member variables with relevant data types.
-    //2) stores the amount of water used per week.
-    float waterUsedPerWeek = 200.f; //3) member variables with relevant data types.
-    //2) stores amount of profit made per week
-    float profitPerWeek = 495.95f; //3) member variables with relevant data types.
-    //2) number of cars serviced per day
-    int numberOfCarsServiced = 10; //3) member variables with relevant data types.
+    //number of vacuum cleaners                     2) copied and commented-out plain-english property
+    int numVacuumCleaners = 3; //                   3) member variables with relevant data types.
+    //number of eco-friendly cleaning supplies      
+    int numEcoFriendlyCleaningSupplies = 20;     
+    //stores the amount of water used per week.     
+    float waterUsedPerWeek = 200.f;            
+    //stores amount of profit made per week         
+    float profitPerWeek = 495.95f;               
+    //number of cars serviced per day               
+    int numberOfCarsServiced = 10;               
     
-    //5) make 2 of the 10 user-defined types have a nested class. 
-    struct Car   
+    struct Car //5)                                 Note that the nested type 'Car' is related to the 'CarWash' 
     {
         //2) member variables with relevant data types.  the names are appropriate for the U.D.T.'s purpose.
         bool isAPickupTruck = false;
         float gasMileage = 26.2f;        
+        int year = 1985;
+        std::string manufacturer = "Toyota";
+        std::string model = "Corolla";
 
         //3) a member function whose parameter has a default value.
         //the parameter name is related to the work the function will perform.
-        void fillTank(double fuelAmountInGallons = 2.0);   
+        void fillTank(double fuelAmountInGallons = 2.0);  
+        void breakDown(std::string failureType, bool requiresTow = false);
+        int getMilesTraveledAnnually(bool includeUberLyftTrips);
     };
 
-    /* 
-    member functions with a user-defined type as the parameter.
-    The user-defined type parameter happens to be the nested class.
-    */
-
-    //2) wash and wax car
-    void washAndWaxCar( Car car );
-    //2) charge customer
-    float chargeCustomer();
-    //2) detail the car interior
+    //wash and wax car
+    void washAndWaxCar( Car car ); //4) a member function whose parameter is a UDT.
+    //charge customer
+    float chargeCustomer(float discountPercentage);
+    //detail the car interior
     void detailInterior( Car car );
     
-               
     //5) a member variable whose type is a UDT.
     Car carBeingServiced;  
 };
 
+/*
+1)Song
+5 properties:
+    1) Name of Song
+    2) Artist Name
+    3) Genre
+    4) Description of Song
+    5) Song Length
+3 things it can do:
+    1) Provide access to the song
+    2) Delete Song Data
+    3) Replace Song Data
+ */
+struct Song
+{
+    //song name
+    bool hasSongName = true;
+    //artist name
+    std::string artistName = "The Artist";
+    //genre
+    std::string genre = "Rock";
+    //song description
+    bool hasSongDescription = false;
+    //song length
+    float songLength = 3.13f; //minutes
+
+    //Member Functions
+
+    //enter song data
+    void enterSongData ( Song mySong );
+    //delete song data
+    void deleteSongData ( Song songToDelete ); // delete song passed in
+    //replace song data
+    void replaceSongData ( Song songDataToUse, Song songDataToReplace );
+    //replace a song data with data previously stored for another song
+};
 
 /*
-1)
+2) FX Filters
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Lo-Fi Filter
+    2) "AutoTune" Effect
+    3) DeNoise Filter
+    4) Dry/Wet Control
+    5) Bypass Filter Control
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Remove high/low frequencies and add distortion to audio
+    2) Apply Pitch Correction Algo to Vocal File
+    3) Apply multi-band expander to vocal vocal track
+ */
+struct Filters
+{
+    //lo-fi filter
+    bool lofiEnabled = true;
+    //autotune effect
+    bool autotuneEnabled = true;
+    //denoise filter
+    bool denoiseEnabled = false;
+    //dry wet control
+    int dryWetControl = 100; //percent
+    //fx bypass
+    bool bypassEnabled = false;
+
+    //Remove high/low freq and addd distortion
+    void bandPassDistortion ( int lowFreq = 300, int highFreq = 4000, int distLevel = 5 );
+    //apply pitch correction
+    void pitchCorrection ( int tuneSpeed = 4, char keyOfSong = 'a');
+    //apply multi-band expander
+    void expander ( int threshold = 30, float expandRatio = 3.0f );
+    // a member variable whose type is a UDT.
+};
+
+/*
+3) Record Audio Activity Screen (for Android App)
+5 properties:
+    1) Song Playback Button
+    2) Song Stop Button
+    3) Record Button
+    4) Undo Record Button
+    5) Back Button
+3 things it can do:
+    1) Record Audio To Disk
+    2) Play Recorded Audio
+    3) Seek Song by Touch
+ */
+struct AppButton
+{
+    //Playback Button
+    bool songPlaybackButton = true;
+    //Stop Playback Button
+    bool songStopped = false;
+    //Record Button
+    bool recordAudio = false;
+    //Undo Button
+    int undoRecordingHistory = 10;
+    //Back Button
+    int previousActivity = 8;
+
+    //Record Audio to Disk
+    void recordAudioSize ( float maxFileSize = 300.0 ); //MB
+    //Play Recorded Audio
+    void playAudio ( float playbackVolume = 9.5 ); // out of 10.
+    //Seek Song by Touch
+    void seekSong ( float getTouchPostion() ); //Going out on a limb here... is this ok? or would you set a member variable to the value of getTouchPosition()?
+};
+
+/*
+4) Success/Song Rendering Activity (for Android App)
+5 properties:
+    1) Save Song to Phone Storage Button
+    2) Send Song Via Email Button
+    3) Share Song to Social Button
+    4) Make Another Song Button
+    5) Advertisement
+3 things it can do:
+    1) Attach Song To Email
+    2) Connect to Facebook API
+    3) Display Ad from Google AdMob
  */
 
-/*
-2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
+struct SuccessActivity
+{
+    //save song to phone storage button
+    bool songSaved = false;
+    //send song via email button
+    bool emailIsValid = true;
+    //share song to social button
+    int socialShare = 3;
+    //make another song button
+    bool makeNewSong = false;
+    //advertisement
+    bool showAd = true;
+
+    //attach song to email
+    void startEmailSong ( bool sendEmail = true );
+    // connect to facebook API
+    void connectFacebookAPI ( double userToken = 4098834720384 );
+    //display ad from google admob
+    void showAdDuration ( int lengthOfAd = 5 );
+   // a member variable whose type is a UDT.
+};
 
 /*
-3)
+Thing 5) Keyboard
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+        1) Color of Keyboard
+        2) Depth of Keystroke
+        3) Keyboard Language (British vs US)
+        4) Number of Keys
+        5) Type (mechanical, wireless, corded, etc)
 3 things it can do:
-    1)
-    2)
-    3)
+        1) Enter code
+        2) Interface with Computer
+        3) Illuminate
  */
 
-/*
-4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
+struct Keyboard
+{
+    //color of keyboard
+    std::string keyboardColor = "black";
+    //depth of keystroke
+    int keyStrokeDepth = 3; //mm
+    //keyboard language
+    bool keyboardUS = true;
+    //number of keys
+    int numberOfKeys = 120;
+    //type of keyboard (mechanical, etc.)
+    int keyboardType = 3;
+    //enter code
+    void codeToEnter ( int myCode );
+    //interface with comp
+    void connectedToComputer ( int numOfConnections = 3 );
+    //illuminate
+    void illuminateKeyboard ( int illuminationIntensity = 4 );
+};
 
 /*
-5)
+Thing 6) Screen
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+        1) Size
+        2) Resolution
+        3) Brightness
+        4) Cost
+        5) Number of Integrated Speakers
 3 things it can do:
-    1)
-    2)
-    3)
+        1) Increase/decrease brightness
+        2) Increase/decrease Contrast
+        3) Interface with computer
  */
 
+
+struct Screen
+{
+    //size
+    int screenSize = 14;
+    //resolution
+    int resolution = 1080;
+    //brightness
+    int brightness = 10;
+    //cost
+    float cost = 99.99f;
+    //num of integrated speakers
+    int numSpeakers = 2;
+    //increase brightness
+    int increaseBrightness (int myBrightness);
+    //set contrast
+    int setContrast (int myContrast = 4);
+    //interface with computer
+    bool isConnected (bool isPluggedIn = true);
+};
 /*
-6)
+Thing 7) Webcam
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+        1) Resolution
+        2) Size (of actual webcam itself)
+        3) Type of Zoom (optical vs digital)
+        4) Type of noise reduction
+        5) Type of focus (manual vs auto)
 3 things it can do:
-    1)
-    2)
-    3)
+        1) Record Videos
+        2) Record Audio
+        3) Take pictures
  */
 
+
+struct Webcam
+ {
+     //resolution
+     int cameraResolution = 720;
+     // dimensions of webcam
+     float sizeOfWebcam = 2.25; //inches
+     //type of zoom
+     bool digitalZoom = false;
+     //type of noise reduction
+     int noiseReductionType = 2;
+     //type of focus
+     bool manualFocus = false;
+     //record video
+     void recordVideo ( float myVideoLength = 121); //seconds
+     //record audio
+     void recordAudio ( float myAudioLength = 121); //seconds
+     //take picture
+     void takeScreenShot ( int imageResolution = 10); //MP
+ };
 /*
-7)
+Thing 8) TouchPad
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+        1) Number of fingers detected (multitouch)
+        2) Movement speed
+        3) Doubleclick speed
+        4) Number of buttons
+        5) Sensitivity
 3 things it can do:
-    1)
-    2)
-    3)
+        1) Move cursor
+        2) Select objects
+        3) Multigesture actions
  */
 
-/*
-8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
+struct TouchPad
+{
+    //1) Number of fingers detected (multitouch)
+    int numOfFingers = 0;
+    // 2) Movement speed
+    int movementSpeed = 5;
+    //3) Doubleclick speed
+    int doubleclickSpeed = 3;
+    //4) Number of buttons
+    int numOfButtons = 2;
+    //5) Sensitivity
+    float sensitivity = 3.334f;
+
+    //Move cursor
+    void moveMouseCursor ( int xPosition = 1444, int yPosition = 100  ); //in px
+    // Select objects
+    void selectObjects ( unsigned int objectsToSelect = 2);
+    // Multigesture actions
+    void performMultigesture ( bool multipleFingersDetected = false );
+};
 
 /*
-9)
+Thing 9) Speakers
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+        1) Number of speakers
+        2) Cone Material
+        3) Power Consumption
+        4) Efficiency
+        5) Number of Drivers (tweeter, woofer, etc) 
 3 things it can do:
-    1)
-    2)
-    3)
+        1) Make sound
+        2) Move driver forwards and backwards
+        3) Consume electricity
  */
+struct Speakers
+{
+    // Number of speakers
+    int numOfSPeakers = 2;
+    // Cone Material
+    char coneMaterial = 'a';
+    // Power Consumption
+    float powerConsumed = 10.33f; //watts
+    // Efficiency
+    float efficiency = 99.3f; //percent
+    // Number of Drivers (tweeter, woofer, etc) 
+    int numOfDrivers = 3;
+
+    // Make sound
+    void makeSound ( int sendPower = 10 ); //watts
+    // Move driver forwards and backwards
+    void oscillateWoofer ( float excursion = 0.9f );
+    // Consume electricity
+    void consumeElectricity ( float rateOfConsumption = 15.f ); //watts
+};
+/*
+Thing 10) Laptop Computer
+5 properties:
+    1) Keyboard
+    2) Screen
+    3) Webcam
+    4) TouchPad
+    5) Speakers
+3 things it can do:
+    1) Run an application
+    2) Send an email
+    3) Play music
+ */
+struct Laptop
+{
+    //Keyboard
+    unsigned int keyboard = 1;
+    //Screen
+    unsigned int screen = 1080;
+    //Webcam
+    bool hasWebcam = false;
+    //TouchPad
+    float touchpadSensitivity = 3.33f;
+    //Speakers
+    unsigned int numOfSpeakersLaptop = 2;
+
+    struct SpeakerInLaptop
+    {
+        //Manufacturer Model
+        std::string modelOfSpeaker = "Bose3";
+        //Warranty?
+        bool hasWarranty = false;
+        //Year Made
+        int yearMade = 2020;
+        //Color of woofer
+        std::string color = "blue";
+        //Default volume
+        float defaultVolume = 0.55f;
+
+        // Ok to play sounds?
+        void playSounds ( bool muteEnabled = false);
+        // Increase the volume by
+        void increaseVolume ( float amountToIncrease = 0.5f); // out of 10
+        // Sleep timer time remaining
+        void sleepTimer ( unsigned int timeUntilMute = 600); //seconds
+    };
+    // Play fav song on internal laptop speakers
+    void playFavoriteSong ( SpeakerInLaptop songToPlay );
+    // Length of time remaining for song
+    int howLongToPlay ( SpeakerInLaptop songDuration );
+    // stop powering speakers when computer turned off
+    void turnOffOnShutdown ( SpeakerInLaptop powerDown );
+
+    // member variable with UDT
+    SpeakerInLaptop leftLaptopSpeaker;
+    SpeakerInLaptop rightLaptopSpeaker;
+
+};
 
 /*
-10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+ MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
+
+ Commit your changes by clicking on the Source Control panel on the left, entering a message, and click [Commit and push].
+ 
+ If you didn't already: 
+    Make a pull request after you make your first commit
+    pin the pull request link and this repl.it link to our DM thread in a single message.
+
+ send me a DM to review your pull request when the project is ready for review.
+
+ Wait for my code review.
  */
 
 #include <iostream>
