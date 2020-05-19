@@ -126,7 +126,7 @@ struct CarWash //                                   1) define an empty struct fo
     2) Delete Song Data
     3) Replace Song Data
  */
-struct Song 
+struct Song
 {
     //song name
     bool hasSongName = true;
@@ -139,14 +139,15 @@ struct Song
     //song length
     float songLength = 3.13f; //minutes
 
-    //provide access to song
-    void accessSongData ( Song mySong );
+    //Member Functions
+
+    //enter song data
+    void enterSongData ( Song mySong );
     //delete song data
-    void deleteSongData ( Song mySong );
+    void deleteSongData ( Song songToDelete ); // delete song passed in
     //replace song data
-    void replaceSongData ( Song mySong ); // or would it be better to have different parameters here like ( Song replacedSongData )?
-    
-    //a member variable whose type is a UDT.    
+    void replaceSongData ( Song songDataToUse, Song songDataToReplace );
+    //replace a song data with data previously stored for another song
 };
 
 /*
@@ -349,12 +350,12 @@ struct Webcam
      int noiseReductionType = 2;
      //type of focus
      bool manualFocus = false;
-    //record video
-    void recordVideo ( float myVideoLength = 121); //seconds
-    //record audio
-    void recordAudio ( float myAudioLength = 121); //seconds
-    //take picture
-    void takeScreenShot ( int imageResolution = 10); //MP
+     //record video
+     void recordVideo ( float myVideoLength = 121); //seconds
+     //record audio
+     void recordAudio ( float myAudioLength = 121); //seconds
+     //take picture
+     void takeScreenShot ( int imageResolution = 10); //MP
  };
 /*
 Thing 8) TouchPad
@@ -450,7 +451,7 @@ struct Laptop
     //Speakers
     unsigned int numOfSpeakersLaptop = 2;
 
-    struct LaptopSpeaker
+    struct SpeakerInLaptop
     {
         //Manufacturer Model
         std::string modelOfSpeaker = "Bose3";
@@ -470,15 +471,16 @@ struct Laptop
         // Sleep timer time remaining
         void sleepTimer ( unsigned int timeUntilMute = 600); //seconds
     };
-    // Play fav song on speakers
-    void playFavoriteSong ( LaptopSpeaker playSound );
+    // Play fav song on internal laptop speakers
+    void playFavoriteSong ( SpeakerInLaptop songToPlay );
     // Length of time remaining for song
-    int howLongToPlay ( LaptopSpeaker songDuration );
+    int howLongToPlay ( SpeakerInLaptop songDuration );
     // stop powering speakers when computer turned off
-    void turnOffOnShutdown ( LaptopSpeaker powerDown );
+    void turnOffOnShutdown ( SpeakerInLaptop powerDown );
 
     // member variable with UDT
-    LaptopSpeaker speakersInLaptop;
+    SpeakerInLaptop leftLaptopSpeaker;
+    SpeakerInLaptop rightLaptopSpeaker;
 
 };
 
